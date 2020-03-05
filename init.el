@@ -25,7 +25,8 @@
        ;;ido               ; the other *other* search engine...
        (ivy               ; a search engine for love and life
         +fuzzy
-        +childframe)
+        +childframe
+        +icons)
 
        :ui
        ;;deft              ; notational velocity for Emacs
