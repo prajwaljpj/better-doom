@@ -1,5 +1,9 @@
 #+TITLE Better Doom configuration for python
 
+* Introduction
+** Goal
+- Provide a better config under [[https://github.com/hlissner/doom-emacs][doom emacs]]
+- gruvbox - easier on the eye for long coding sessions
 * Requirements
 The required packages have to be installed
 ** Company/ivy
@@ -28,3 +32,58 @@ sudo pip install pyenv
   #+BEGIN_SRC sh
 sudo pip install python-language-server[all]
   #+END_SRC
+
+* Configs
+** Dropbox integration
+Take your work wherever you go [[http://www.orgzly.com/][orgzly]]
+#+BEGIN_SRC emacs-lisp
+(setq org-directory "~/Dropbox/org")
+(setq org-agenda-files '("~/Dropbox/org"))
+#+END_SRC
+** Org-capture
+Setting basic capture template for an optimised workflow
+#+BEGIN_SRC emacs-lisp
+(setq org-capture-templates
+      '(("t" "All TODOs")
+ ("tp" "Personal todo" entry
+  (file+headline +org-capture-todo-file "Personal Tasks")
+  "* [ ] %?\n%i\n%a" :prepend t)
+ ("tw" "Work todo" entry
+  (file+headline +org-capture-todo-file "Professional Tasks")
+  "* [ ] %?\n%i\n%a" :prepend t)
+ ("ti" "Ideas" entry
+  (file+headline +org-capture-todo-file "Ideas")
+  "* [ ] %?\n%i\n%a" :prepend t)
+ ("n" "All Notes")
+ ("np" "Personal notes" entry
+  (file+headline +org-capture-notes-file "Personal Notes")
+  "* %u %?\n%i\n%a" :prepend t)
+ ("nw" "Work notes" entry
+  (file+headline +org-capture-notes-file "Professional Notes")
+  "* %u %?\n%i\n%a" :prepend t)
+ ("ni" "Interesting" entry
+  (file+headline +org-capture-notes-file "Interesting")
+  "* %u %?\n%i\n%a" :prepend t)
+ ("nl" "For Later" entry
+  (file+headline +org-capture-notes-file "Look Later")
+  "* %u %?\n%i\n%a" :prepend t)
+ ("j" "Journal" entry
+  (file+olp+datetree +org-capture-journal-file)
+  "* %U %?\n%i\n%a" :prepend t)
+ ("p" "Templates for projects")
+ ("pt" "Project-local todo" entry
+  (file+headline +org-capture-project-todo-file "Inbox")
+  "* TODO %?\n%i\n%a" :prepend t)
+ ("pn" "Project-local notes" entry
+  (file+headline +org-capture-project-notes-file "Inbox")
+  "* %U %?\n%i\n%a" :prepend t)
+ ("pc" "Project-local changelog" entry
+  (file+headline +org-capture-project-changelog-file "Unreleased")
+  "* %U %?\n%i\n%a" :prepend t)
+ ("o" "Centralized templates for projects")
+ ("ot" "Project todo" entry #'+org-capture-central-project-todo-file "* TODO %?\n %i\n %a" :heading "Tasks" :prepend nil)
+ ("on" "Project notes" entry #'+org-capture-central-project-notes-file "* %U %?\n %i\n %a" :heading "Notes" :prepend t)
+ ("oc" "Project changelog" entry #'+org-capture-central-project-changelog-file "* %U %?\n %i\n %a" :heading "Changelog" :prepend t)))
+#+END_SRC
+* Authors
+- Prajwal Rao [[mailto:prajwaljpj@gmail.com][prajwaljpj@gmail.com]], [[mailto:prajwalrao@iisc.ac.in][prajwalrao@iisc.ac.in]]
