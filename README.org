@@ -1,4 +1,6 @@
-#+TITLE Better Doom configuration for python
+#+TITLE: Better Doom configuration for python
+#+AUTHOR: Prajwal Rao
+#+EMAIL: prajwaljpj@gmail.com
 
 * Introduction
 ** Goal
@@ -16,7 +18,7 @@ The required packages have to be installed
   #+BEGIN_SRC sh
 sudo pip install pytest
   #+END_SRC
-- [[https://github.com/psf/black][black]
+- [[https://github.com/psf/black][black]]
   #+BEGIN_SRC sh
 sudo pip install black
   #+END_SRC
