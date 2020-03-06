@@ -10,28 +10,28 @@
 The required packages have to be installed
 ** Company/ivy
 - [[https://github.com/BurntSushi/ripgrep][ripgrep]]
-  #+BEGIN_SRC sh
+  #+BEGIN_SRC bash
     sudo apt-get install ripgrep
   #+END_SRC
 ** Python
 - [[https://github.com/wbolster/emacs-python-pytest][pytest]]
-  #+BEGIN_SRC sh
+  #+BEGIN_SRC bash
 sudo pip install pytest
   #+END_SRC
 - [[https://github.com/psf/black][black]]
-  #+BEGIN_SRC sh
+  #+BEGIN_SRC bash
 sudo pip install black
   #+END_SRC
 - [[https://github.com/PyCQA/pyflakes][pyflakes]]
-  #+BEGIN_SRC sh
+  #+BEGIN_SRC bash
 sudo pip install pyflakes
   #+END_SRC
 - [[https://github.com/pyenv/pyenv][pyenv]]
-  #+BEGIN_SRC sh
+  #+BEGIN_SRC bash
 sudo pip install pyenv
   #+END_SRC
 - [[https://github.com/pyenv/pyenv][python-language-server]]
-  #+BEGIN_SRC sh
+  #+BEGIN_SRC bash
 sudo pip install python-language-server[all]
   #+END_SRC
 
