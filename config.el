@@ -37,7 +37,8 @@
 ;;         ("j" "Journal" entry (file+datetree "~/Dropbox/org/journal.org")
 ;;          "* %?\nEntered on %U\n  %i\n  %a")))
 
-(setq org-capture-templates
+(after! org
+  (setq org-capture-templates
       '(("t" "All TODOs")
  ("tp" "Personal todo" entry
   (file+headline +org-capture-todo-file "Personal Tasks")
@@ -78,6 +79,7 @@
  ("ot" "Project todo" entry #'+org-capture-central-project-todo-file "* TODO %?\n %i\n %a" :heading "Tasks" :prepend nil)
  ("on" "Project notes" entry #'+org-capture-central-project-notes-file "* %U %?\n %i\n %a" :heading "Notes" :prepend t)
  ("oc" "Project changelog" entry #'+org-capture-central-project-changelog-file "* %U %?\n %i\n %a" :heading "Changelog" :prepend t)))
+  )
 
 ;; Some custom commands for agenda view
 ;; for more information follow this link
