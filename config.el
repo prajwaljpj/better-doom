@@ -2,7 +2,7 @@
 
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; refresh' after modifying this file!
-
+(load! "+bindings")
 
 ;; These are used for a number of things, particularly for GPG configuration,
 ;; some email clients, file templates and snippets.
@@ -150,4 +150,40 @@ PRIORITY may be one of the characters ?A, ?B, or ?C."
 (setq +python-jupyter-repl-args '("--simple-prompt"))
 
 ;; Company backend TODO
-(set-company-backend! 'lsp-mode 'company-lsp)
+;; (set-company-backend! 'lsp-mode '(company-lsp))
+;; (after! company
+;;   (setq company-idle-delay 0.0
+;;         ;; company-tooltip-idle-delay 0.1
+;;         company-minimum-prefix-length 5
+;;         company-lsp-async t))
+
+;; (set-company-backend! '(python-mode
+;;                         c-mode)
+;;   '(:separate company-lsp
+;;               company-capf
+;;               ;; company-tabnine
+;;               company-files
+;;               company-yasnippet))
+
+;; (set-company-backend! '(org-mode)
+;;   '(:separate ;; company-ispell
+;;               company-capf
+;;               ;; company-tabnine ;; Try tabnine? seems promising
+;;               company-files
+;;               company-yasnippet))
+
+;; (setq +lsp-company-backend '(company-lsp :with company-tabnine :separate))
+
+;; (after! lsp-ui
+;;   (setq! lsp-ui-doc-delay 0.0
+;;          lsp-ui-doc-position 'bottom
+;;          lsp-ui-peek-enable t))
+
+;; do i have to do this? or redundant?
+;; (set-lookup-handlers! 'python-mode
+;;   :definition #'lsp-find-definition
+;;   :references #'lsp-find-references
+;;   :documentation #'lsp-document-highlight)
+
+;; ranger deer mode disable by default
+(setq ranger-override-dired-mode nil)

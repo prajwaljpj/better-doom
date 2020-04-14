@@ -87,5 +87,10 @@ Setting basic capture template for an optimised workflow
  ("on" "Project notes" entry #'+org-capture-central-project-notes-file "* %U %?\n %i\n %a" :heading "Notes" :prepend t)
  ("oc" "Project changelog" entry #'+org-capture-central-project-changelog-file "* %U %?\n %i\n %a" :heading "Changelog" :prepend t)))
 #+END_SRC
+** LSP
+Enabled LSP with docs and references
+** Dired mode with Ranger
+Used ranger, unset deer mode (minimalistic dired mode) as default as ir does not
+support preview(i)
 * Authors
 - Prajwal Rao [[mailto:prajwaljpj@gmail.com][prajwaljpj@gmail.com]], [[mailto:prajwalrao@iisc.ac.in][prajwalrao@iisc.ac.in]]
