@@ -150,6 +150,11 @@ PRIORITY may be one of the characters ?A, ?B, or ?C."
 (setq +python-jupyter-repl-args '("--simple-prompt"))
 
 ;; Company backend TODO
+(after! company
+  (setq company-idle-delay 0.0
+        company-echo-delay 0.0
+        company-minimum-prefix-length 0
+        company-tooltip-flip-when-above t))
 ;; (set-company-backend! 'lsp-mode '(company-lsp))
 ;; (after! company
 ;;   (setq company-idle-delay 0.0
@@ -165,17 +170,17 @@ PRIORITY may be one of the characters ?A, ?B, or ?C."
 ;;               company-files
 ;;               company-yasnippet))
 
-;; (set-company-backend! '(org-mode)
-;;   '(:separate ;; company-ispell
-;;               company-capf
-;;               ;; company-tabnine ;; Try tabnine? seems promising
-;;               company-files
-;;               company-yasnippet))
+(set-company-backend! 'org
+   ;; company-ispell
+              'company-capf
+              ;; company-tabnine ;; Try tabnine? seems promising
+              'company-files
+              'company-yasnippet)
 
 ;; (setq +lsp-company-backend '(company-lsp :with company-tabnine :separate))
 
 ;; (after! lsp-ui
-;;   (setq! lsp-ui-doc-delay 0.0
+;;   (setq lsp-ui-doc-delay 0.0
 ;;          lsp-ui-doc-position 'bottom
 ;;          lsp-ui-peek-enable t))
 
@@ -185,5 +190,28 @@ PRIORITY may be one of the characters ?A, ?B, or ?C."
 ;;   :references #'lsp-find-references
 ;;   :documentation #'lsp-document-highlight)
 
+;; tide mode setup
+;; (after! tide
+;;   (setq tide-completion-detailed t
+;;         tide-always-show-documentation t)
+;;   )
+
+;; Prettier js
+;; (setq prettier-js-args '(
+;;   "--trailing-comma" "none"
+;;   "--parser" "flow"
+;;   "--semi" "false"
+;;   "single-quote" "true"
+;;   ))
+
+;; Flow minor mode for js
+(add-hook! (rjsx-mode js2-mode)
+     #'(flow-minor-enable-automatically))
+
 ;; ranger deer mode disable by default
-(setq ranger-override-dired-mode nil)
+(after! ranger
+  (setq ranger-override-dired nil))
+
+;; For virtualenv and eshell compatibility
+(after! eshell (venv-initialize-eshell)
+  (setq venv-location "/home/prajwaljpj/.virtualenvs/"))

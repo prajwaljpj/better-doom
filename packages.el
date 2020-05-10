@@ -53,3 +53,7 @@
 
 ;; Trying tabnine
 ;; (package! company-tabnine)
+(package! virtualenvwrapper)
+(package! flow-minor-mode)
+;; (package! prettier-js)
+(package! js-react-redux-yasnippets)

@@ -8,3 +8,5 @@
     [return]    nil
     "TAB"       #'company-complete-selection
     [tab]       #'company-complete-selection))
+(eval-after-load "flow-minor-mode"
+     '(define-key flow-minor-mode-map (kbd "C-S-f") 'flow-minor-status))
