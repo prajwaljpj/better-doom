@@ -23,7 +23,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. These are the defaults.
-(setq doom-theme 'doom-gruvbox)
+(setq doom-theme 'doom-nord)
 
 ;; If you intend to use org, it is recommended you change this!
 (setq org-directory "~/Dropbox/org")
@@ -170,12 +170,18 @@ PRIORITY may be one of the characters ?A, ?B, or ?C."
 ;;               company-files
 ;;               company-yasnippet))
 
-(set-company-backend! 'org
-   ;; company-ispell
-              'company-capf
-              ;; company-tabnine ;; Try tabnine? seems promising
-              'company-files
-              'company-yasnippet)
+(after! org
+  (set-company-backend! 'org-mode
+    '(company-latex-commands :with company-math-symbols-latex))
+  )
+(after! org
+  (setq company-math-allow-latex-symbols-in-faces t))
+;; (set-company-backend! 'org
+;;    ;; company-ispell
+;;               'company-capf
+;;               ;; company-tabnine ;; Try tabnine? seems promising
+;;               'company-files
+;;               'company-yasnippet)
 
 ;; (setq +lsp-company-backend '(company-lsp :with company-tabnine :separate))
 
