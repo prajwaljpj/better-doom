@@ -221,3 +221,17 @@ PRIORITY may be one of the characters ?A, ?B, or ?C."
 ;; For virtualenv and eshell compatibility
 (after! eshell (venv-initialize-eshell)
   (setq venv-location "/home/prajwaljpj/.virtualenvs/"))
+
+(after! org
+(setq org-latex-listings 'minted
+      org-latex-packages-alist '(("" "minted"))
+      org-latex-pdf-process
+      '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+        "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+        "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f")))
+
+(after! org
+  (setq org-ditaa-jar-path "/usr/share/ditaa/ditaa.jar"))
+
+(after! org
+  (setq org-latex-listings 'minted))
